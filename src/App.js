@@ -6,12 +6,21 @@ const url = "https://api.nasa.gov/planetary/apod";
 const api_key = "6h4EPLYjn8d7acXEfpPBYzfIczSScM8LOAMMDc7N";
 
 function App() {
-  const [imageData, setImageData] = useState({});
+  const [imageData, setImageData] = useState(null);
 
   useEffect(() => {
-    axios.get(`${url}?api_key=${api_key}`)
+    const dummyImageData = {
+      copyright: "ScottAspinall",
+      date: "2020-04-15",
+      explanation: "It was an astronomical triple play. Setting on the left, just after sunset near the end of last month, was our Moon -- showing a bright crescent phase.  Setting on the right was Venus, the brightest planet in the evening sky last month -- and this month, too.  With a small telescope, you could tell that Venus' phase was half, meaning that only half of the planet, as visible from Earth, was exposed to direct sunlight and brightly lit. High above and much further in the distance was the Pleiades s...",
+      title: "A Cosmic Triangle",
+      url: "https://apod.nasa.gov/apod/image/2004/MVP_Aspinall_960.jpg"
+    }
+    setImageData(dummyImageData)
+
+    /*axios.get(`${url}?api_key=${api_key}`)
       .then(res => setImageData(res.data))
-      .catch(err => console.error(err));
+      .catch(err => console.error(err)); */
   }, []);
 
   return (
