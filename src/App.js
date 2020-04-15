@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import PageTitle from "./components/PageTitle/PageTitle.component";
 import AstronomyImage from "./components/AstronomyImage/AstronomyImage.component";
+import  AstronomyDesc from "./components/AstronomyDesc/AstronomyDesc.component";
 
 import "./App.css";
 
@@ -27,7 +29,9 @@ function App() {
 
   return (
     <div className="App">
+      <PageTitle title={imageData.title}/>
       <AstronomyImage imageSource={imageData.url} imageAltText={imageData.title}/>
+      <AstronomyDesc description={imageData.explanation} />
     </div>
   );
 }
