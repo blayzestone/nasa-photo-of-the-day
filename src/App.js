@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import AstronomyImage from "./components/AstronomyImage/AstronomyImage.component";
+
 import "./App.css";
 
 const url = "https://api.nasa.gov/planetary/apod";
 const api_key = "6h4EPLYjn8d7acXEfpPBYzfIczSScM8LOAMMDc7N";
 
 function App() {
-  const [imageData, setImageData] = useState(null);
+  const [imageData, setImageData] = useState({});
 
   useEffect(() => {
     const dummyImageData = {
@@ -25,10 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <AstronomyImage imageSource={imageData.url} imageAltText={imageData.title}/>
     </div>
   );
 }
