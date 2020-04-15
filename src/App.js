@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import PageTitle from "./components/PageTitle/PageTitle.component";
 import AstronomyImage from "./components/AstronomyImage/AstronomyImage.component";
+import AstronomyMeta from "./components/AstronomyMeta/AstronomyMeta.component";
 import  AstronomyDesc from "./components/AstronomyDesc/AstronomyDesc.component";
 
 import "./App.css";
@@ -31,6 +32,7 @@ function App() {
     <div className="App">
       <PageTitle title={imageData.title}/>
       <AstronomyImage imageSource={imageData.url} imageAltText={imageData.title}/>
+      <AstronomyMeta date={imageData.date} copyright={imageData.copyright} />
       <AstronomyDesc description={imageData.explanation} />
     </div>
   );
