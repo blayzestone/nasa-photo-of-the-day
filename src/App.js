@@ -13,7 +13,7 @@ const api_key = "6h4EPLYjn8d7acXEfpPBYzfIczSScM8LOAMMDc7N";
 
 function App() {
   const [imageData, setImageData] = useState(null);
-  const [date, setDate] = useState("2020-01-08");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     axios.get(`${url}?api_key=${api_key}&date=${date}`)
