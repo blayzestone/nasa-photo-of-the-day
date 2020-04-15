@@ -1,8 +1,11 @@
 import React from "react";
+import "./AstronomyImage.style.css";
 
 function AstronomyImage({ imageSource, imageAltText }) {
   return(
-    <img src={imageSource} alt={imageAltText}/>
+    <div className="astronomy-image-container">
+      <img src={imageSource} alt={imageAltText}/>
+    </div>
   );
 }
 
