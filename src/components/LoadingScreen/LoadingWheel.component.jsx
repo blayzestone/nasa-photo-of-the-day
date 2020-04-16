@@ -1,6 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import "./LoadingWheel.style.css";
+import styled, { keyframes } from "styled-components";
+
+const rotate = keyframes`
+  100% {transform: rotate(360deg);}
+`;
 
 const LoadingWheel = styled.div`
   margin: 0 auto;
@@ -11,7 +14,7 @@ const LoadingWheel = styled.div`
   border-right: solid 6px navy;
   border-radius: 50%;
 
-  animation: rotate 0.5s linear infinite;
+  animation: ${rotate} 0.5s linear infinite;
 `;
 
 export default LoadingWheel;
