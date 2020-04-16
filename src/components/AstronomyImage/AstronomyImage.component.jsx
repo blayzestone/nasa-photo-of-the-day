@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import "./AstronomyImage.style.css";
 
 const Image = styled.img`
   width: 100%;

@@ -38,7 +38,7 @@ function App() {
       <PageTitle>imageData.title</PageTitle>
       <AstronomyImage imageSource={imageData.url} imageAltText={imageData.title}/>
       <AstronomyMeta date={imageData.date} copyright={imageData.copyright} />
-      <AstronomyDesc description={imageData.explanation} />
+      <AstronomyDesc>{imageData.explanation}</AstronomyDesc>
       <DatePicker date={date} changeHandler={evt => setDate(evt.target.value)}/>
     </div>
   );
