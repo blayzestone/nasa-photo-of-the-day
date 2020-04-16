@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <PageTitle title={imageData.title}/>
+      <PageTitle>imageData.title</PageTitle>
       <AstronomyImage imageSource={imageData.url} imageAltText={imageData.title}/>
       <AstronomyMeta date={imageData.date} copyright={imageData.copyright} />
       <AstronomyDesc description={imageData.explanation} />

@@ -1,10 +1,17 @@
 import React from "react";
+import styled from "styled-components";
 
-function PageTitle({ title }) {
+const PageTitle = styled.h1`
+  text-align: center;
+  font-size: 3rem;
+  color: navy;
+`;
 
-  return(
-    <h1>{title}</h1>
-  );
-}
+// function PageTitle({ title }) {
+
+//   return(
+//     <h1>{title}</h1>
+//   );
+// }
 
 export default PageTitle;
