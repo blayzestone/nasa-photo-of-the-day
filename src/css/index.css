@@ -5,6 +5,7 @@
 body {
   max-width: 1200px;
   width: 100%;
+  background-color: azure;
   margin: 0 auto;
   padding: 0 1rem;
   font-size: 62.5%;
