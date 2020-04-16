@@ -1,12 +1,13 @@
 import React from "react";
-import "./AstronomyImage.style.css";
+import styled from "styled-components";
+// import "./AstronomyImage.style.css";
+
+const Image = styled.img`
+  width: 100%;
+`;
 
 function AstronomyImage({ imageSource, imageAltText }) {
-  return(
-    <div className="astronomy-image-container">
-      <img src={imageSource} alt={imageAltText}/>
-    </div>
-  );
+  return <Image src={imageSource} alt={imageAltText}/>;
 }
 
 export default AstronomyImage;
