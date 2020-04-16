@@ -5,6 +5,8 @@ import AstronomyImage from "./components/AstronomyImage/AstronomyImage.component
 import AstronomyMeta from "./components/AstronomyMeta/AstronomyMeta.component";
 import  AstronomyDesc from "./components/AstronomyDesc/AstronomyDesc.component";
 import DatePicker from "./components/DatePicker/DatePicker.component";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen.component";
+import LoadingWheel from "./components/LoadingScreen/LoadingWheel.component"; 
 
 import "./App.css";
 
@@ -14,14 +16,22 @@ const api_key = "6h4EPLYjn8d7acXEfpPBYzfIczSScM8LOAMMDc7N";
 function App() {
   const [imageData, setImageData] = useState(null);
   const [date, setDate] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+
     axios.get(`${url}?api_key=${api_key}&date=${date}`)
       .then(res => setImageData(res.data))
+      .then(() => setIsLoading(false)) // Set isLoading to false after recieving data
       .catch(err => console.error(err));
   }, [date]);
 
-  if (!imageData) return <h3>Loading...</h3>;
+  if (isLoading) return(
+    <LoadingScreen>
+      <LoadingWheel />
+    </LoadingScreen>
+  );
 
   return (
     <div className="App">
